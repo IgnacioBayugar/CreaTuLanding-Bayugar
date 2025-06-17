@@ -1,0 +1,61 @@
+@import "../../assets/styles/base/colors.scss";
+
+.idb-itemcard {
+  border-radius: 0.7rem;
+  overflow: hidden;
+  background: white;
+  border: 1px solid darken(white, 10%);
+  transition: box-shadow 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &:hover {
+    box-shadow: 0 4px 24px black;
+    border-color: $color-primary;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: white;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid darken(white, 10%);
+  }
+
+  &__body {
+    padding: 1rem 1rem 0.8rem 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $color-primary;
+    margin-bottom: 0.4rem;
+    min-height: 2.2rem;
+  }
+
+  &__desc {
+    font-size: 0.97rem;
+    color: #666;
+    margin-bottom: 1rem;
+    min-height: 2.2rem;
+  }
+
+  &__footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.5rem;
+  }
+
+  &__price {
+    color: $color-secondary;
+    font-size: 1.1rem;
+  }
+}

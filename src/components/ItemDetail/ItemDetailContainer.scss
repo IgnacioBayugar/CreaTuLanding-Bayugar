@@ -1,0 +1,58 @@
+@import "../../assets/styles/base/colors.scss";
+
+.idb-itemdetail {
+  display: flex;
+  gap: 2rem;
+  background: $color-background;
+  border-radius: 0.7rem;
+  box-shadow: 0 0.25rem 1.5rem #0002;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+
+  &__img-wrapper {
+    flex: 0 0 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: lighten($color-background, 4%);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 18rem;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    background: #fff;
+  }
+
+  &__info {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-primary;
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+  }
+
+  &__price {
+    color: $color-secondary;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+}

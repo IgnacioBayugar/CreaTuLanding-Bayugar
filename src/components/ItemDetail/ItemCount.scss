@@ -1,0 +1,35 @@
+@import "../../assets/styles/base/colors.scss";
+
+.idb-itemcount .btn.idb-itemcount__btn {
+  border-color: $color-secondary;
+  color: $color-primary;
+  background: $color-background;
+  &:hover:not(:disabled) {
+    background: $color-primary;
+    color: #fff;
+    border-color: $color-primary;
+  }
+  &:disabled {
+    background: lighten($color-background, 6%);
+    color: #bbb;
+    border-color: #eee;
+    cursor: not-allowed;
+  }
+}
+
+.idb-itemcount__value.form-control {
+  border-color: $color-secondary;
+  background: $color-background;
+  color: $color-primary;
+}
+
+.idb-itemcount .btn.idb-itemcount__add {
+  background: $color-secondary;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  &:hover {
+    background: $color-primary;
+    color: #fff;
+  }
+}

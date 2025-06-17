@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./ItemCount.scss";
 
 function ItemCount({ stock = 10, initial = 1, onAdd }) {
   const [count, setCount] = useState(initial);
@@ -12,9 +13,9 @@ function ItemCount({ stock = 10, initial = 1, onAdd }) {
   };
 
   return (
-    <div className="d-flex align-items-center gap-2 mt-3">
+    <div className="idb-itemcount d-flex align-items-center gap-2 mt-3">
       <button
-        className="btn btn-outline-secondary"
+        className="btn idb-itemcount__btn"
         onClick={handleSubtract}
         disabled={count <= 1}
         type="button"
@@ -23,13 +24,13 @@ function ItemCount({ stock = 10, initial = 1, onAdd }) {
       </button>
       <input
         type="text"
-        className="form-control text-center"
+        className="form-control text-center idb-itemcount__value"
         style={{ width: "3rem" }}
         value={count}
         readOnly
       />
       <button
-        className="btn btn-outline-secondary"
+        className="btn idb-itemcount__btn"
         onClick={handleAdd}
         disabled={count >= stock}
         type="button"
@@ -37,7 +38,7 @@ function ItemCount({ stock = 10, initial = 1, onAdd }) {
         +
       </button>
       <button
-        className="btn btn-success ms-3"
+        className="btn idb-itemcount__add ms-3"
         onClick={() => onAdd(count)}
         type="button"
       >

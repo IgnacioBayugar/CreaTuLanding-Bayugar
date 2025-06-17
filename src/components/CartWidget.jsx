@@ -1,23 +1,11 @@
-import { Badge } from 'react-bootstrap';
-
 const CartWidget = () => {
   return (
-    <div style={{ position: "relative", display: "inline-block", marginLeft: "1rem" }}>
-      <span style={{ fontSize: "1.7rem" }}>🛒</span>
-      <Badge
-        pill
-        bg="danger"
-        style={{
-          position: "absolute",
-          top: 0,
-          right: 0,
-          transform: "translate(40%,-40%)",
-          fontSize: "0.7rem"
-        }}
-      >
-        0
-      </Badge>
-    </div>
+      <button type="button" className="btn btn-primary position-relative">
+        <i className="bi bi-cart3"></i>
+        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          0
+        </span>
+      </button>
   );
 };
 

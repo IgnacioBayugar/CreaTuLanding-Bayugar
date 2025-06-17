@@ -1,7 +1,8 @@
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
-import CartWidget from './CartWidget';
-import { useEffect, useState } from 'react';
+import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import CartWidget from "./CartWidget";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./NavBar.scss";
 
 function NavBar() {
   const [categories, setCategories] = useState([]);
@@ -13,13 +14,19 @@ function NavBar() {
   }, []);
 
   return (
-    <Navbar bg="primary" variant="dark" expand="lg" className="shadow">
-      <Container fluid>
-        <Navbar.Brand as={Link} to="/" className="fw-bold fs-4">Vastara</Navbar.Brand>
+    <Navbar expand="lg" className="idb-navbar">
+      <Container fluid className="idb-navbar__container">
+        <Navbar.Brand as={Link} to="/" className="idb-navbar__title">
+          Vastara
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto">
-            <NavDropdown title="Categorias" id="basic-nav-dropdown">
+          <Nav className="mx-auto idb-navbar__nav">
+            <NavDropdown
+              title="Categorias"
+              id="basic-nav-dropdown"
+              className="idb-navbar__dropdown"
+            >
               <NavDropdown.Item as={Link} to="/">
                 Todas las categorías
               </NavDropdown.Item>
@@ -34,7 +41,9 @@ function NavBar() {
               ))}
             </NavDropdown>
           </Nav>
-          <CartWidget />
+          <div className="idb-navbar__cart">
+            <CartWidget />
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
