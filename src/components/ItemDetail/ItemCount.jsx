@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ItemCount.scss";
 
-function ItemCount({ stock = 10, initial = 1, onAdd }) {
+function ItemCount({ stock, initial = 1, onAdd }) {
   const [count, setCount] = useState(initial);
 
   const handleAdd = () => {
