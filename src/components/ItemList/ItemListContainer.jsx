@@ -11,7 +11,7 @@ function ItemListContainer() {
   useEffect(() => {
     const url = categoryName
       ? `https://dummyjson.com/products/category/${encodeURIComponent(categoryName)}`
-      : 'https://dummyjson.com/products';
+      : 'https://dummyjson.com/products?limit=52';
     fetch(url)
       .then(res => res.json())
       .then(data => setItems(data.products));
