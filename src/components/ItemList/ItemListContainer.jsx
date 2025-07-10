@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Container } from "react-bootstrap";
+import { getProducts, filterProducts } from "../../firebase/db";
 import ItemList from "./ItemList";
 import "./ItemListContainer.scss";
 
@@ -9,12 +10,11 @@ function ItemListContainer() {
   const { categoryName } = useParams();
 
   useEffect(() => {
-    const url = categoryName
-      ? `https://dummyjson.com/products/category/${encodeURIComponent(categoryName)}`
-      : 'https://dummyjson.com/products?limit=52';
-    fetch(url)
-      .then(res => res.json())
-      .then(data => setItems(data.products));
+    if (categoryName) {
+      filterProducts(categoryName).then(setItems);
+    } else {
+      getProducts().then(setItems);
+    }
   }, [categoryName]);
 
   return (

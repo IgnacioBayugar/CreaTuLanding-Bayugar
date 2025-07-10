@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 import "./ItemCount.scss";
 
 function ItemCount({ stock, initial = 1, onAdd }) {
@@ -10,6 +11,15 @@ function ItemCount({ stock, initial = 1, onAdd }) {
 
   const handleSubtract = () => {
     if (count > 1) setCount(count - 1);
+  };
+
+  const handleAddToCart = () => {
+    onAdd(count);
+    Swal.fire(
+      "¡Agregado a tu carrito!",
+      `Agregaste ${count} unidad${count > 1 ? "es" : ""} al carrito.`,
+      "success"
+    );
   };
 
   return (
@@ -39,7 +49,7 @@ function ItemCount({ stock, initial = 1, onAdd }) {
       </button>
       <button
         className="btn idb-itemcount__add ms-3"
-        onClick={() => onAdd(count)}
+        onClick={handleAddToCart}
         type="button"
       >
         Agregar al carrito

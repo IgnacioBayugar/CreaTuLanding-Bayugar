@@ -1,4 +1,4 @@
-import Item from "./Item";
+import Item from "../Item/Item";
 import { Col } from "react-bootstrap";
 
 function ItemList({ items }) {
