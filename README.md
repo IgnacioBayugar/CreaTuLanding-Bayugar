@@ -72,8 +72,16 @@ index.html
 
 1. **Clona el repositorio:**
    ```sh
-   git clone https://github.com/tuusuario/tu-repo.git
-   cd tu-repo
+   git clone https://github.com/IgnacioBayugar/ProyectoFinal-Bayugar.git
+   cd ProyectoFinal-Bayugar
+   ```
+2. **Instala las dependencias:**
+   ```sh
+   npm install
+   ```
+3. **Inicia la app en modo desarrollo:**
+   ```sh
+   npm run dev
    ```
 
 ---
