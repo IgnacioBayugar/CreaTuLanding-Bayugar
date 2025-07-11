@@ -13,7 +13,7 @@ function NavBar() {
     getCategories().then(setCategories);
   }, []);
 
-  // Detecta si la ruta es de categoría y cuál es la activa
+  // detecta si la ruta actual es una categoría y extrae el nombre de la categoría activa
   const isCategoryRoute = location.pathname.startsWith("/category/");
   const activeCategory = isCategoryRoute
     ? decodeURIComponent(location.pathname.split("/category/")[1])
@@ -23,7 +23,7 @@ function NavBar() {
     <Navbar expand="lg" className="idb-navbar">
       <Container fluid className="idb-navbar__container">
         <Navbar.Brand as={Link} to="/" className="idb-navbar__title">
-          Vastara
+          Vastar
         </Navbar.Brand>
         <Nav className="idb-navbar__nav">
           <NavDropdown

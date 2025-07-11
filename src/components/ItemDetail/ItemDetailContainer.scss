@@ -56,3 +56,21 @@
     margin-bottom: 1.5rem;
   }
 }
+
+.idb-seguircomprando-btn {
+  background: #F97316;
+  color: #fff;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: darken(#F97316, 10%);
+    color: #fff;
+  }
+}

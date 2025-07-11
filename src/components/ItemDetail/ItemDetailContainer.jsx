@@ -20,7 +20,7 @@ function ItemDetailContainer() {
     getProductById(itemId)
       .then(setItem)
       .finally(() => setLoading(false));
-    setAdded(false); // Reset al cambiar de producto
+    setAdded(false);
   }, [itemId]);
 
   if (loading) {
@@ -38,6 +38,7 @@ function ItemDetailContainer() {
   }
 
   if (!item)
+    // si no se encuentra el producto, muestra un mensaje de error
     return <div className="text-center mt-5">Producto no encontrado</div>;
 
   const handleAdd = (cantidad) => {
@@ -50,6 +51,7 @@ function ItemDetailContainer() {
     );
   };
 
+  // si el producto ya fue agregado, muestra el botón "Seguir comprando" en su lugar
   return (
     <div className="idb-itemdetail">
       <div className="idb-itemdetail__img-wrapper">
@@ -67,8 +69,7 @@ function ItemDetailContainer() {
           <ItemCount stock={item.stock} initial={1} onAdd={handleAdd} />
         ) : (
           <button
-            className="idb-checkout__btn idb-checkout__btn--secondary"
-            style={{ background: "#F97316", color: "#fff", marginTop: "1rem" }}
+            className="idb-seguircomprando-btn"
             onClick={() => navigate("/")}
           >
             Seguir comprando

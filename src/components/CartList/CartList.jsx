@@ -11,6 +11,7 @@ const CartList = () => {
   const navigate = useNavigate();
 
   if (cart.length === 0)
+    //muestra un mensaje si el carrito está vacío
     return <div className="idb-cartlist__empty">El carrito está vacío.</div>;
 
   const handleClearCart = () => {

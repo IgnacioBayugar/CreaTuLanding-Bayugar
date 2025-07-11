@@ -5,6 +5,7 @@ import formatPrice from "../../helpers/FormatPrice";
 import "./CartItem.scss";
 
 const CartItem = ({ item }) => {
+  // obtiene la función para eliminar productos del carrito desde el context
   const { removeFromCart } = useContext(CartContext);
 
   const handleRemove = () => {

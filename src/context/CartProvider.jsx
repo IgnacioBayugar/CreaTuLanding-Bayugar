@@ -4,7 +4,6 @@ import CartContext from "./CartContext";
 function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  // Agregar producto al carrito
   const addToCart = (item, quantity) => {
     setCart(prevCart => {
       const existing = prevCart.find(prod => prod.id === item.id);
@@ -19,18 +18,14 @@ function CartProvider({ children }) {
     });
   };
 
-  // Remover producto del carrito
   const removeFromCart = (id) => {
     setCart(prevCart => prevCart.filter(prod => prod.id !== id));
   };
 
-  // Vaciar carrito
   const clearCart = () => setCart([]);
 
-  // Cantidad total de productos
   const cartQuantity = cart.reduce((acc, prod) => acc + prod.quantity, 0);
 
-  // Precio total
   const cartTotal = cart.reduce((acc, prod) => acc + prod.price * prod.quantity, 0);
 
   return (

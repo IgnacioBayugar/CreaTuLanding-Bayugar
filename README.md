@@ -1,6 +1,6 @@
-# Vastara E-commerce
+# Vastar E-commerce
 
-Vastara es un e-commerce desarrollado con **React** y **Firebase Firestore** como base de datos. Permite navegar un catálogo de productos, filtrar por categorías, ver detalles, agregar productos al carrito y realizar compras, todo con una experiencia simple y fluida.
+Vastar es un e-commerce desarrollado con **React** y **Firebase Firestore** como base de datos. Permite navegar un catálogo de productos, filtrar por categorías, ver detalles, agregar productos al carrito y realizar compras, todo con una experiencia simple y fluida.
 
 ---
 
@@ -40,21 +40,30 @@ Vastara es un e-commerce desarrollado con **React** y **Firebase Firestore** com
 ## 📁 Estructura de carpetas
 
 ```bash
-/public
-  /images
-  index.html
 /src
   /components
-    /Cart
-    /Checkout
-    /Home
-    /ProductDetail
-    /Products
+      /CartItem.jsx
+      /CartList.jsx
+      /Checkout.jsx
+      /Item.jsx
+      /ItemCount.jsx
+      /ItemDetailContainer.jsx
+      /ItemList.jsx
+      /NavBar.jsx
+    CartWidget.jsx
+    ItemsFilter.jsx
   /context
-  /hooks
+    /CartContext.js
+    /CartProvider.jsx
+  /firebase
+  /helpers
+    /FormatPrice.jsx
+  /hoc
+    /WithLoading.jsx
   /styles
-  App.js
-  index.js
+  App.jsx
+  main.jsx
+index.html
 ```
 
 ---

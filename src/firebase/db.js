@@ -3,7 +3,6 @@ import { app } from "./config";
 
 const db = getFirestore(app);
 
-// Obtener todos los productos
 export const getProducts = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, "products"));
@@ -15,7 +14,6 @@ export const getProducts = async () => {
   }
 };
 
-// Obtener un producto por ID
 export const getProductById = async (id) => {
   try {
     const docRef = doc(db, "products", id);
@@ -32,7 +30,6 @@ export const getProductById = async (id) => {
   }
 };
 
-// Filtrar productos por categoría
 export const filterProducts = async (category) => {
   try {
     const q = query(collection(db, "products"), where("category", "==", category));
@@ -45,7 +42,6 @@ export const filterProducts = async (category) => {
   }
 };
 
-// Obtener todas las categorías únicas
 export const getCategories = async () => {
   try {
     const products = await getProducts();
@@ -57,7 +53,6 @@ export const getCategories = async () => {
   }
 };
 
-// Crear una orden
 export const createOrder = async (order) => {
   try {
     const docRef = await addDoc(collection(db, "orders"), order);
