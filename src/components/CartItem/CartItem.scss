@@ -1,0 +1,32 @@
+@import "../../styles/base/colors.scss";
+
+.idb-cartitem {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem; // opcional, para separar el texto del botón
+  padding: 0.5rem 0;
+
+  &__btn {
+    padding: 0.3rem 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+
+    &--remove {
+      background: $color-secondary;
+      color: #fff;
+      margin-left: 1rem;
+
+      &:hover {
+        background: darken($color-secondary, 10%);
+        color: #fff;
+      }
+    }
+  }
+}

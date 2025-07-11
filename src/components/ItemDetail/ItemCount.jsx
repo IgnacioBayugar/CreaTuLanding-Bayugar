@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Swal from "sweetalert2";
 import "./ItemCount.scss";
 
 function ItemCount({ stock, initial = 1, onAdd }) {
@@ -15,11 +14,6 @@ function ItemCount({ stock, initial = 1, onAdd }) {
 
   const handleAddToCart = () => {
     onAdd(count);
-    Swal.fire(
-      "¡Agregado a tu carrito!",
-      `Agregaste ${count} unidad${count > 1 ? "es" : ""} al carrito.`,
-      "success"
-    );
   };
 
   return (

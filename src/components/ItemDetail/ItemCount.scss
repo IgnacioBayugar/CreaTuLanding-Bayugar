@@ -23,13 +23,17 @@
   color: $color-primary;
 }
 
-.idb-itemcount .btn.idb-itemcount__add {
+.idb-itemcount__add {
   background: $color-secondary;
   color: #fff;
-  border: none;
   font-weight: 600;
-  &:hover {
-    background: $color-primary;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.4rem 1.2rem;
+  transition: background 0.2s;
+  &:hover, &:focus {
+    background: darken($color-secondary, 10%);
     color: #fff;
   }
 }
+

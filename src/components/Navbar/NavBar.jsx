@@ -1,16 +1,23 @@
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
 import CartWidget from "../CartWidget";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { getCategories } from "../../firebase/db";
 import "./NavBar.scss";
 
 function NavBar() {
   const [categories, setCategories] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     getCategories().then(setCategories);
   }, []);
+
+  // Detecta si la ruta es de categoría y cuál es la activa
+  const isCategoryRoute = location.pathname.startsWith("/category/");
+  const activeCategory = isCategoryRoute
+    ? decodeURIComponent(location.pathname.split("/category/")[1])
+    : null;
 
   return (
     <Navbar expand="lg" className="idb-navbar">
@@ -20,7 +27,7 @@ function NavBar() {
         </Navbar.Brand>
         <Nav className="idb-navbar__nav">
           <NavDropdown
-            title="Categorías"
+            title={activeCategory ? activeCategory : "Categorías"}
             id="basic-nav-dropdown"
             className="idb-navbar__dropdown"
             menuVariant="light"

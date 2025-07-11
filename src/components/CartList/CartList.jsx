@@ -3,7 +3,8 @@ import CartContext from "../../context/CartContext";
 import CartItem from "../CartItem/CartItem";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import "./CartList.sass";
+import formatPrice from "../../helpers/FormatPrice";
+import "./CartList.scss";
 
 const CartList = () => {
   const { cart, cartTotal, clearCart } = useContext(CartContext);
@@ -36,7 +37,7 @@ const CartList = () => {
           <CartItem key={item.id} item={item} />
         ))}
       </ul>
-      <div className="idb-cartlist__total">Total: ${cartTotal}</div>
+      <div className="idb-cartlist__total">Total: {formatPrice(cartTotal)}</div>
       <div className="idb-cartlist__actions">
         <button onClick={handleClearCart} className="idb-cartlist__btn idb-cartlist__btn--clear">
           Vaciar carrito

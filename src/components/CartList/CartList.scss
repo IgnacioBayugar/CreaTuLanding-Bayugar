@@ -1,0 +1,77 @@
+@import "../../styles/base/colors.scss";
+
+.idb-cartlist {
+  background: $color-background;
+  border-radius: 0.7rem;
+  box-shadow: 0 0.25rem 1.5rem #0002;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $color-primary;
+    margin-bottom: 1rem;
+  }
+
+  &__items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__total {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $color-secondary;
+    margin: 1rem 0;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  &__btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.4rem;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &--clear {
+      background: $color-secondary;
+      color: #fff;
+
+      &:hover {
+        background: darken($color-secondary, 10%);
+      }
+    }
+
+    &--checkout {
+      background: $color-primary;
+      color: #fff;
+
+      &:hover {
+        background: darken($color-primary, 10%);
+      }
+    }
+  }
+
+  &__empty {
+    text-align: center;
+    color: #888;
+    font-size: 1.1rem;
+    margin: 2rem 0;
+  }
+}
