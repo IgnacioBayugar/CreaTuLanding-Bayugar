@@ -33,6 +33,9 @@ function NavBar() {
             menuVariant="light"
           >
             {categories.map((categoryName) => (
+              // intenté que se marque la categoría activa en el dropdown usando NavLink,
+              // pero react o bootstrap no lo aplica
+              // así que hice que se resalte simplemente con el cambio de palabra de "categorías" a "hogar", por ejemplo.
               <NavDropdown.Item
                 key={categoryName}
                 as={Link}
